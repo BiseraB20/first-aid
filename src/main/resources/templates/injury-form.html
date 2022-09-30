@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<div class="container">
+    <h3>Внесете нова повреда за која ќе учат корисниците</h3>
+    <form th:action="@{/injury/form}" th:method="POST" enctype="multipart/form-data">
+
+        <div class="mb-3 row">
+            <label for="injuryName" class="col-sm-2 col-form-label">Име на повреда</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control-plaintext" name="injuryName" id="injuryName">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="context" class="col-sm-2 col-form-label">Опис на повредата</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="context" id="context" aria-label="With textarea"></textarea>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="category" class="col-sm-2 col-form-label">Категорија за која се однесува објавата </label>
+            <div class="col-sm-10">
+                <select name="category"  id="category" class="form-select" aria-label="Default select example">
+                    <option selected>Изберете категорија</option>
+                    <option value="1">Деца</option>
+                    <option value="2">Возрасни</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <input type="file" name="urlImg" class="custom-file-input" required=""
+                   id="customFile"> <label class="custom-file-label"
+                                           for="customFile">Слика од повреда</label>
+        </div>
+        <button id="submit" type="submit" class="btn btn-primary">Зачувај</button>
+    </form>
+
+</div>
